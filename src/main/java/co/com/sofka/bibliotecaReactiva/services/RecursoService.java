@@ -32,6 +32,13 @@ public class RecursoService {
                 .orElseThrow();
     }
 
+    public List<RecursoDto> getByTipo(String tipo){
+        return repository.findByTipo(tipo)
+                .stream()
+                .map(recurso -> mapper.fromCollection(recurso))
+                .collect((Collectors.toList()));
+    }
+
     public List<RecursoDto> getByTematica(String tematica){
         return repository.findByTematica(tematica)
                 .stream()
