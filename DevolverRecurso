@@ -1,0 +1,16 @@
+@startuml
+actor usuario
+control controller
+entity recursoDto
+entity modelRecurso
+entity RecursoService
+collections Repository
+database MongoDb
+usuario -> controller : devolverRecurso
+controller -> recursoDto : recursoDto
+recursoDto -> modelRecurso : Modelo
+recursoDto -> RecursoService : Recurso service
+RecursoService -> Repository : Save
+Repository -> MongoDb: Persistence
+
+@enduml

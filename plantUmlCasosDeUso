@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+actor Persona as g
+package Biblioteca {
+  usecase "ConsultarDisponibilidad" as UC1
+  usecase "PrestarRecurso" as UC2
+  usecase "RecomendarListadoCursos" as UC3
+  usecase "EstaPrestado" as UC4
+  usecase "ModificarRecurso" as UC5
+  usecase "AñadirRecurso" as UC6
+  usecase "EliminarRecurso" as UC7
+}
+UC1 --> g
+UC2 --> g
+UC3 --> g
+UC4 --> g
+UC5 <-- g
+UC6 <-- g
+UC7 <-- g
+@enduml
+
